@@ -1,0 +1,326 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "intro",
+   "metadata": {},
+   "source": [
+    "# Data Visualization Fundamentals Assignment\n",
+    "\n",
+    "This notebook will guide you through basic data visualization techniques using Python's matplotlib library.\n",
+    "\n",
+    "**Instructions:** Run each cell in order and complete the assignment questions at the end."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "imports",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Import required libraries\n",
+    "import matplotlib.pyplot as plt\n",
+    "import numpy as np\n",
+    "import pandas as pd"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "data-setup",
+   "metadata": {},
+   "source": [
+    "## Sample Data\n",
+    "\n",
+    "Let's create some sample data to work with:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "create-data",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Create sample data\n",
+    "x = np.linspace(0, 10, 50)\n",
+    "y = 2 * x + 1 + np.random.normal(0, 2, 50)  # Linear trend with noise\n",
+    "y_error = np.random.uniform(0.5, 2.0, 50)   # Error bars for later use\n",
+    "\n",
+    "print(f\"Data points: {len(x)}\")\n",
+    "print(f\"X range: {x.min():.2f} to {x.max():.2f}\")\n",
+    "print(f\"Y range: {y.min():.2f} to {y.max():.2f}\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "basic-plot",
+   "metadata": {},
+   "source": [
+    "## Basic Line Plot\n",
+    "\n",
+    "Here's a simple line plot of our data:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "line-plot",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Basic line plot\n",
+    "plt.figure(figsize=(10, 6))\n",
+    "plt.plot(x, y, 'b-', linewidth=2, label='Data')\n",
+    "plt.xlabel('X values')\n",
+    "plt.ylabel('Y values')\n",
+    "plt.title('Basic Line Plot')\n",
+    "plt.legend()\n",
+    "plt.grid(True, alpha=0.3)\n",
+    "plt.show()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "scatter-example",
+   "metadata": {},
+   "source": [
+    "## Scatter Plot Example\n",
+    "\n",
+    "Here's how to create a scatter plot:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "scatter-plot",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Scatter plot example\n",
+    "plt.figure(figsize=(10, 6))\n",
+    "plt.scatter(x, y, c='blue', alpha=0.6, s=50)\n",
+    "plt.xlabel('X values')\n",
+    "plt.ylabel('Y values')\n",
+    "plt.title('Scatter Plot Example')\n",
+    "plt.grid(True, alpha=0.3)\n",
+    "plt.show()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "bar-example",
+   "metadata": {},
+   "source": [
+    "## Bar Chart Example\n",
+    "\n",
+    "Here's a bar chart using aggregated data:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "bar-plot",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Create some categorical data for bar chart\n",
+    "categories = ['A', 'B', 'C', 'D', 'E']\n",
+    "values = [23, 45, 56, 78, 32]\n",
+    "\n",
+    "plt.figure(figsize=(10, 6))\n",
+    "plt.bar(categories, values, color=['red', 'green', 'blue', 'orange', 'purple'])\n",
+    "plt.xlabel('Categories')\n",
+    "plt.ylabel('Values')\n",
+    "plt.title('Bar Chart Example')\n",
+    "plt.show()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "assignment-header",
+   "metadata": {},
+   "source": [
+    "---\n",
+    "\n",
+    "# ASSIGNMENT QUESTIONS\n",
+    "\n",
+    "Complete the following tasks using the data and examples above. Add your code in the cells provided.\n",
+    "\n",
+    "**Grading:** Each question is worth 25 points (100 points total)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "q1-header",
+   "metadata": {},
+   "source": [
+    "## Question 1: Line Plot with Error Bars (25 points)\n",
+    "\n",
+    "Modify the basic line plot to include error bars using the `y_error` data we created.\n",
+    "\n",
+    "**Hint:** Use `plt.errorbar()` instead of `plt.plot()`"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "q1-answer",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Question 1: Add your code here\n",
+    "plt.figure(figsize=(10, 6))\n",
+    "\n",
+    "# Your code goes here - create a line plot with error bars\n",
+    "\n",
+    "\n",
+    "plt.show()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "q2-header",
+   "metadata": {},
+   "source": [
+    "## Question 2: Customized Scatter Plot (25 points)\n",
+    "\n",
+    "Create a scatter plot using the same x,y data but with these specifications:\n",
+    "- Red dots instead of blue\n",
+    "- Title: \"My Data Analysis\"\n",
+    "- X-axis label: \"Time\"\n",
+    "- Y-axis label: \"Values\"\n",
+    "- Add a grid"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "q2-answer",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Question 2: Add your code here\n",
+    "plt.figure(figsize=(10, 6))\n",
+    "\n",
+    "# Your code goes here - create the customized scatter plot\n",
+    "\n",
+    "\n",
+    "plt.show()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "q3-header",
+   "metadata": {},
+   "source": [
+    "## Question 3: Bar Chart from Grouped Data (25 points)\n",
+    "\n",
+    "Create a bar chart showing the average of every 10 data points from our y data.\n",
+    "\n",
+    "**Hints:** \n",
+    "- Use `numpy.mean()` and array slicing\n",
+    "- You should end up with 5 bars\n",
+    "- Use group labels like \"Group 1\", \"Group 2\", etc."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "q3-answer",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Question 3: Add your code here\n",
+    "\n",
+    "# First, calculate the averages for each group of 10 points\n",
+    "# Your code here:\n",
+    "\n",
+    "\n",
+    "# Then create the bar chart\n",
+    "plt.figure(figsize=(10, 6))\n",
+    "\n",
+    "# Your plotting code here:\n",
+    "\n",
+    "\n",
+    "plt.show()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "q4-header",
+   "metadata": {},
+   "source": [
+    "## Question 4: BONUS - Scatter Plot with Trend Line (25 points)\n",
+    "\n",
+    "Create a scatter plot (like in Question 2) but add a trend line using `numpy.polyfit()` and `numpy.poly1d()`.\n",
+    "\n",
+    "**Hints:**\n",
+    "- Use `np.polyfit(x, y, 1)` for linear fit\n",
+    "- Use `np.poly1d()` to create the trend line function\n",
+    "- Plot both the scatter points and the trend line"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "q4-answer",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Question 4 BONUS: Add your code here\n",
+    "plt.figure(figsize=(10, 6))\n",
+    "\n",
+    "# Create the scatter plot first\n",
+    "# Your scatter plot code:\n",
+    "\n",
+    "\n",
+    "# Calculate and plot the trend line\n",
+    "# Your trend line code:\n",
+    "\n",
+    "\n",
+    "plt.show()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "submission",
+   "metadata": {},
+   "source": [
+    "---\n",
+    "\n",
+    "## Submission Instructions\n",
+    "\n",
+    "1. Complete all four questions above\n",
+    "2. Run all cells to ensure your code works\n",
+    "3. Save your notebook\n",
+    "4. Submit through Canvas\n",
+    "\n",
+    "**Due Date:** [Insert due date here]\n",
+    "\n",
+    "**Questions?** Contact your instructor or TA."
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.10.8"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
